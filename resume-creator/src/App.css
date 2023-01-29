@@ -14,7 +14,7 @@
   color: white;
 }
 
-.personalInfo,.educationForm,.experienceForm{
+.personalInfoForm,.educationForm,.experienceForm,.expInfo,.eduInfo,.personalInfo{
   display: flex;
   flex-direction: column;
 }

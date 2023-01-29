@@ -1,12 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function EducationForm(){
+export default function EducationForm(props){
     
     const [uni,setUni] = useState("");
     const [degree,setDegree] = useState("");
     const [GPA,setGPA] = useState("");
     const [eduFrom,setEduFrom] = useState("");
     const [eduTo,setEduTo] = useState("");
+
+    useEffect(()=>{
+
+        const uniHTML = document.querySelector(`.eduInfo#${props.uniqueId} #uni`);
+        uniHTML.innerHTML = uni;
+
+        const degreeHTML = document.querySelector(`.eduInfo#${props.uniqueId} #degree`)
+        degreeHTML.innerHTML = degree;
+
+        const gpaHTML = document.querySelector(`.eduInfo#${props.uniqueId} #gpa`)
+        gpaHTML.innerHTML = GPA;
+
+        const eduFromHTML = document.querySelector(`.eduInfo#${props.uniqueId} #eduFrom`)
+        eduFromHTML.innerHTML = eduFrom;
+
+        const eduToHTML = document.querySelector(`.eduInfo#${props.uniqueId} #eduTo`)
+        eduToHTML.innerHTML = eduTo;
+
+    },[uni,degree,GPA,eduFrom,eduTo,props.uniqueId])
+
 
     function handleUni(e){
         setUni(e.target.value)

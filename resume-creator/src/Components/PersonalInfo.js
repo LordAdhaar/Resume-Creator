@@ -1,4 +1,7 @@
 export default function PersonalInfo(){
+
+    console.log("personal Info was Called")
+
     return(
         <div className="personalInfo">
             <p id="fName"></p>

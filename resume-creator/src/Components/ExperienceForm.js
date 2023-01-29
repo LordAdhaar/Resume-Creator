@@ -1,6 +1,6 @@
 import {  useEffect, useState } from "react";
 
-export default function ExperienceForm(){
+export default function ExperienceForm(props){
 
     const [position, setPosition] = useState("");
     const [company,setCompany] = useState("");
@@ -10,8 +10,28 @@ export default function ExperienceForm(){
     const [jobDescription,setJobDescription] = useState("");
 
     useEffect(()=>{
-        console.log("you changed")
-    },[position,company,jobCity,jobFrom,jobTo,jobDescription])
+        
+        const positionHTML = document.querySelector(`.expInfo#${props.uniqueId} #position`);
+        positionHTML.innerHTML = position;
+        
+        const companyHTML = document.querySelector(`.expInfo#${props.uniqueId} #company`);
+        companyHTML.innerHTML = company;
+
+        const jobCityHTML = document.querySelector(`.expInfo#${props.uniqueId} #jobCity`);
+        jobCityHTML.innerHTML = jobCity;
+
+        const jobFromHTML = document.querySelector(`.expInfo#${props.uniqueId} #jobFrom`);
+        jobFromHTML.innerHTML = jobFrom;
+
+        const jobToHTML = document.querySelector(`.expInfo#${props.uniqueId} #jobTo`);
+        jobToHTML.innerHTML = jobTo;
+
+        const jobDescHTML = document.querySelector(`.expInfo#${props.uniqueId} #jobDesc`);
+        jobDescHTML.innerHTML = jobDescription;
+
+        console.log(props.uniqueId)
+
+    },[position,company,jobCity,jobFrom,jobTo,jobDescription,props.uniqueId])
 
     function handlePosition(e){
         setPosition(e.target.value)
