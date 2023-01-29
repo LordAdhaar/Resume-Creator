@@ -1,60 +1,98 @@
-import { useState } from 'react';
 import './App.css';
-import Experience from "./Experience";
+import PersonalInfoForm from "./Components/PersonalInfoForm"
+import ExperienceForm from "./Components/ExperienceForm"
+import EducationForm from "./Components/EducationForm"
+import { useState } from 'react';
 import uniqid from "uniqid";
+import PersonalInfo from "./Components/PersonalInfo"
+import ExperienceInfo from "./Components/ExperienceInfo";
+
 
 function App() {
 
-  const [firstName,setFirstName] = useState("");
-  const [lastName,setLastName] = useState("")
-  const [phone,setPhone] = useState("")
-  const [location,setLocation] = useState("")
-  const [email,setEmail] = useState("")
+  const [jobArr, setJobArr] = useState([[<ExperienceForm key={uniqid()}/>,uniqid()]]);
 
-  const [jobChildren, setJobChildren] = useState([<Experience key={uniqid()}  />]);
-
-  function handleJobChildren(){
-    setJobChildren([...jobChildren,<Experience key={uniqid()} />])
+  function handleJobArr(){
+    setJobArr([...jobArr,[<ExperienceForm key={uniqid()} />,uniqid()]])
   }
 
-
-  function handleFirstName(e){
-    setFirstName(e.target.value)
-  }
-  
-  function handleLastName(e){
-    setLastName(e.target.value)
+  function deleteJob(jobDelId){
+    console.log("lamo")
+    setJobArr(jobArr.filter(job => job[1]!==jobDelId))
   }
 
-  function handlePhone(e){
-    setPhone(e.target.value)
+  const jobChildren = jobArr.map(job => {
+    return(
+      <div className="jobForm" key={job[1]}>
+        {job[0]}
+        <button onClick={()=>{deleteJob(job[1])}}>DELETE</button>
+        <br />
+        <br />
+      </div>
+    )
+  })
+
+  const [eduArr, setEduArr] = useState([[<EducationForm key={uniqid}/>,uniqid()]])
+
+  function handleEduArr(){
+    setEduArr([...eduArr,[<EducationForm key={uniqid()}/>,uniqid()]])
   }
 
-  function handleLocation(e){
-    setLocation(e.target.value)
+  function deleteEdu(eduDelId){
+    setEduArr(eduArr.filter(edu => edu[1]!==eduDelId))
   }
 
-  function handleEmail(e){
-    setEmail(e.target.value);
-    console.log(firstName,lastName,phone,location,email,e.target.value,e.target);
-  }
+  const eduChildren = eduArr.map(edu=>{
+    return(
+      <div className="eduForm" key={edu[1]}> 
+        {edu[0]}
+        <button onClick={()=>{deleteEdu(edu[1])}}>DELETE</button>
+        <br />
+        <br />
+      </div>
+    )
+  })
 
+
+
+  //RETURN THE FINAL APPLICATION
   return (
-    <div className="Container">
-      <div className="personalInfo">
-        <input type="text" placeholder='First Name' id="firstName" value={firstName} onChange={handleFirstName}  />
-        <input type="text" placeholder='Last Name' id="lastName" value={lastName}  onChange={handleLastName}/>
-        <input type="text" placeholder='Phone Number' id="phoneNumber" value={phone} onChange={handlePhone}/>
-        <input type="text" placeholder='Location' id="location"  value={location} onChange={handleLocation} />
-        <input type="text" placeholder='E-Mail' id="email" value={email} onChange={handleEmail}/>
+    <div className="container">
+
+      <div className="form">
+        
+        <PersonalInfoForm/>
+      
+        <div className="jobHeader">
+          <h3>Experience </h3>
+          <button onClick={handleJobArr}>ADD</button>
+        </div>
+
+        <div className="jobContent">
+          {jobChildren}
+          <br />
+        </div>
+        
+
+        <div className="eduHeader">
+          <h3>Education</h3>
+          <button onClick={handleEduArr}>ADD</button>
+        </div>
+
+        <div className="eduContent">
+          {eduChildren}
+          <br />
+        </div>
+
       </div>
-      <br/>
-      <div className="jobContainer">
-        {jobChildren}
-        <button className="add" onClick={handleJobChildren}>ADD</button>
-      </div>
+
+      <div className="resume">
+            <PersonalInfo />
+            <ExperienceInfo />
+        </div>
+
     </div>
-  );
+);
 }
 
 export default App;

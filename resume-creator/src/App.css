@@ -1,7 +1,30 @@
-/*@media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.container{
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.personalInfo,.educationForm,.experienceForm{
+  display: flex;
+  flex-direction: column;
+}
+
+.jobHeader, .eduHeader{
+  display: flex;
+}
+
+h3{
+  margin: 0px;
 }
 
 .App-link {
@@ -15,31 +38,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-*/
-
-.Container {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.personalInfo{
-  display: flex;
-  flex-direction: column;
-}
-
-.jobContainer{
-  display: flex;
-  flex-direction: column;
-}
-
-.jobInfo{
-  display: flex;
-  flex-direction: column;
 }
