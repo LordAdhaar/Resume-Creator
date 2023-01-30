@@ -81,6 +81,10 @@ function App() {
   return (
     <div className="container">
 
+      <div id="header">
+        <h1>RESUME CREATOR</h1>
+      </div>
+
       <div className="form">
         
         <PersonalInfoForm/>
@@ -110,7 +114,9 @@ function App() {
 
       <div className="resume">
             <PersonalInfo />
+            <h3 className='expHeaderResume'>EXPERIENCE</h3>
             {jobChildrenResume}
+            <h3 className='eduHeaderResume'>EDUCATION</h3>
             {eduChildrenResume}
         </div>
 

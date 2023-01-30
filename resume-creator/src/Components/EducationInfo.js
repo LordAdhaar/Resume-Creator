@@ -1,11 +1,17 @@
 export default function EducationInfo(props){
     return (
         <div className="eduInfo" id={props.uniqueId}>
-            <p id="uni"></p>
-            <p id="degree"></p>
+            <div className="branch">
+                <p id="uni"></p>
+                <p id="degree"></p>
+            </div>
+            
             <p id="gpa"></p>
-            <p id="eduFrom"></p>
-            <p id="eduTo"></p>
+            
+            <div className="uniTenure">
+                <p id="eduFrom"></p>
+                <p id="eduTo"></p>
+            </div>
         </div>
     )
 }

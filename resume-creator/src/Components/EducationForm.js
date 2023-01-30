@@ -11,16 +11,16 @@ export default function EducationForm(props){
     useEffect(()=>{
 
         const uniHTML = document.querySelector(`.eduInfo#${props.uniqueId} #uni`);
-        uniHTML.innerHTML = uni;
+        uniHTML.innerHTML = uni + "&nbsp;";
 
         const degreeHTML = document.querySelector(`.eduInfo#${props.uniqueId} #degree`)
-        degreeHTML.innerHTML = degree;
+        degreeHTML.innerHTML = "| &nbsp;" + degree;
 
         const gpaHTML = document.querySelector(`.eduInfo#${props.uniqueId} #gpa`)
-        gpaHTML.innerHTML = GPA;
+        gpaHTML.innerHTML =  "GPA : " + GPA + "/10";
 
         const eduFromHTML = document.querySelector(`.eduInfo#${props.uniqueId} #eduFrom`)
-        eduFromHTML.innerHTML = eduFrom;
+        eduFromHTML.innerHTML = eduFrom + "&nbsp; - &nbsp;";
 
         const eduToHTML = document.querySelector(`.eduInfo#${props.uniqueId} #eduTo`)
         eduToHTML.innerHTML = eduTo;

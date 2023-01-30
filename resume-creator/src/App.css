@@ -1,41 +1,160 @@
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+body{
+  min-height: 100vh;
+  margin: 0px;
+  font-family: 'EB Garamond', serif;
 }
 
+/* STYDLING THE MAIN COMPONENTS OF THE BODY*/
 .container{
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+#header{
+  margin: 0px 60px;
+  grid-column: 1/3;
+
+}
+
+.form{
+  margin: 0px 60px;
+}
+
+.resume{
+  padding: 0px 35px;
+  height: 297mm;
+  width: 210mm;
+  margin: 0px 60px;
+  background-color: white;
+  color: black;
+}
+
+/*STYLING P TAGS AND HEADERS*/
+
+.personalInfoForm h3, .jobHeader h3, .eduHeader h3{
+  margin: 0px;
+}
+
+h3.expHeaderResume, h3.eduHeaderResume{
+  margin-bottom: 0px;
+  font-size: 11pt;
+  border-bottom: 1px solid black;
+}
+
+h3.expHeader{
+  margin-top: 0px;
+}
+
+.fullName p{
+  margin-bottom:0px ;
+}
+
+.generalInfo p{
+  margin-top: 0px;
+}
+
+p#position, .tenure p{
+  margin-bottom: 0px;
+}
+
+.companyInfo p{
+  margin: 0px;
+}
+
+#jobDesc{
+  margin-bottom: 0px;
+}
+
+.branch p, .uniTenure p{
+  margin-bottom: 0px;
+}
+
+#gpa{
+  margin: 0px;
+}
+
 
 .personalInfoForm,.educationForm,.experienceForm,.expInfo,.eduInfo,.personalInfo{
   display: flex;
   flex-direction: column;
 }
 
+.fullName{
+  font-weight: bold;
+  font-size: 22pt;
+}
+
+.generalInfo{
+
+  font-size: 11.5pt;
+}
+
+.experienceResume, .eduResume{
+  font-size: 11pt;
+}
+
+.expInfo{
+  display: grid;
+  grid-template-columns: 1fr .15fr;
+}
+
+#position{
+  font-weight: bold;
+}
+
+.companyInfo{
+  display: flex;
+  grid-column: 1/2;
+}
+
+.tenure{
+  display: flex;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-content: flex-end ;
+}
+
+#jobDesc{
+  grid-row: 3/4;
+  grid-column: 1/3;
+  word-wrap: normal;
+}
+
+.eduInfo{
+  display: grid;
+  grid-template-columns: 1fr .15fr;
+}
+
+.branch{
+  display: flex;
+}
+
+#uni{
+  font-weight: bold;
+}
+
+.uniTenure{
+  display: flex;
+  justify-content: flex-end;
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+
+
+.fullName, .generalInfo{
+  display: flex;
+  justify-content: center;
+}
+
 .jobHeader, .eduHeader{
   display: flex;
 }
 
-h3{
-  margin: 0px;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

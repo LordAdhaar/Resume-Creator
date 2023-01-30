@@ -15,13 +15,13 @@ export default function ExperienceForm(props){
         positionHTML.innerHTML = position;
         
         const companyHTML = document.querySelector(`.expInfo#${props.uniqueId} #company`);
-        companyHTML.innerHTML = company;
+       companyHTML.innerHTML = company + "&nbsp; | &nbsp;";
 
         const jobCityHTML = document.querySelector(`.expInfo#${props.uniqueId} #jobCity`);
         jobCityHTML.innerHTML = jobCity;
 
         const jobFromHTML = document.querySelector(`.expInfo#${props.uniqueId} #jobFrom`);
-        jobFromHTML.innerHTML = jobFrom;
+        jobFromHTML.innerHTML = jobFrom + "&nbsp; - &nbsp;";
 
         const jobToHTML = document.querySelector(`.expInfo#${props.uniqueId} #jobTo`);
         jobToHTML.innerHTML = jobTo;

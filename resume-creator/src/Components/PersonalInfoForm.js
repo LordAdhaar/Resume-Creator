@@ -14,19 +14,19 @@ export default function PersonalInfoForm(){
         console.log("peronalInforForm was called")
     
         const fName = document.getElementById("fName");
-        fName.innerHTML=firstName;
+        fName.innerHTML=firstName + "&nbsp;";
 
         const lName = document.getElementById("lName");
         lName.innerHTML=lastName;
 
         const phoneNo = document.getElementById("phone");
-        phoneNo.innerHTML=phone;
+        phoneNo.innerHTML=phone + "&nbsp; ● &nbsp;";
 
         const city = document.getElementById("city");
-        city.innerHTML=yourCity;
+        city.innerHTML=yourCity + ", &nbsp;";
 
         const state = document.getElementById("state");
-        state.innerHTML=yourSate;
+        state.innerHTML=yourSate + "&nbsp; ● &nbsp;";
 
         const atTheRate = document.getElementById("email");
         atTheRate.innerHTML=email
