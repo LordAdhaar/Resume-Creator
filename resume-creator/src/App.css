@@ -34,15 +34,16 @@ body{
   margin: 0px 60px;
   background-color: white;
   color: black;
+  margin-bottom: 50px;
 }
 
 /*STYLING P TAGS AND HEADERS*/
 
-.personalInfoForm h3, .jobHeader h3, .eduHeader h3{
+.personalInfoForm h3, .jobHeader h3, .eduHeader h3, .skillHeader h3{
   margin: 0px;
 }
 
-h3.expHeaderResume, h3.eduHeaderResume{
+h3.expHeaderResume, h3.eduHeaderResume, h3.skillHeaderResume{
   margin-bottom: 0px;
   font-size: 11pt;
   border-bottom: 1px solid black;
@@ -81,9 +82,13 @@ p#position, .tenure p{
 }
 
 
-.personalInfoForm,.educationForm,.experienceForm,.expInfo,.eduInfo,.personalInfo{
+.personalInfoForm,.educationForm,.experienceForm,.expInfo,.eduInfo,.personalInfo, .skillForm{
   display: flex;
   flex-direction: column;
+}
+
+.allSkill{
+  display: flex;
 }
 
 .fullName{
@@ -96,7 +101,7 @@ p#position, .tenure p{
   font-size: 11.5pt;
 }
 
-.experienceResume, .eduResume{
+.experienceResume, .eduResume, .skillResume{
   font-size: 11pt;
 }
 
@@ -154,7 +159,7 @@ p#position, .tenure p{
   justify-content: center;
 }
 
-.jobHeader, .eduHeader{
+.jobHeader, .eduHeader,.skillHeader{
   display: flex;
 }
 

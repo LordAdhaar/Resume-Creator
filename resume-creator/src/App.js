@@ -7,6 +7,8 @@ import uniqid from "uniqid";
 import PersonalInfo from "./Components/PersonalInfo"
 import ExperienceInfo from "./Components/ExperienceInfo";
 import EducationInfo from "./Components/EducationInfo";
+import SkillForm from "./Components/SkillForm";
+import SkillInfo from "./Components/SkillInfo";
 
 
 function App() {
@@ -75,6 +77,34 @@ function App() {
     )
   })
 
+  const [skillArr, setSkillArr] = useState([]);
+
+  function handleSkillArr(){
+    setSkillArr([...skillArr,[<SkillForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<SkillInfo key={uniqueId} uniqueId={uniqueId} />]]);
+  }
+
+  function deleteSkill(skillDelId){
+    setSkillArr(skillArr.filter(skill => skill[1]!==skillDelId));
+  }
+
+  const skillChildren = skillArr.map(skill=>{
+    return(
+      <div className="skillFormMain" key={skill[1]} id={skill[1]}>
+          {skill[0]}
+          <button onClick={()=>{deleteSkill(skill[1])}} >DELETE</button>
+          <br />
+          <br />
+      </div>
+    )
+  });
+
+  const skillChildrenResume = skillArr.map(skill=>{
+    return(
+      <div className="skillResume" key={skill[1]}>
+        {skill[2]}
+      </div>
+    )
+  })
 
 
   //RETURN THE FINAL APPLICATION
@@ -110,6 +140,17 @@ function App() {
           <br />
         </div>
 
+        <div className="skillHeader">
+          <h3>Skills</h3>
+          <button onClick={()=>{handleUniqueId();handleSkillArr()}} >ADD</button>
+        </div>
+
+        <div className="skillContent">
+          {skillChildren}
+          <br />
+        </div>
+
+
       </div>
 
       <div className="resume">
@@ -118,6 +159,10 @@ function App() {
             {jobChildrenResume}
             <h3 className='eduHeaderResume'>EDUCATION</h3>
             {eduChildrenResume}
+            <h3 className="skillHeaderResume">SKILL</h3>
+            <div className="allSkill">
+              {skillChildrenResume}
+            </div>
         </div>
 
     </div>

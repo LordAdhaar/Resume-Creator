@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 
 export default function PersonalInfoForm(){
 
-    const [firstName, setFirstName] = useState("");
-    const [lastName,setLastName] = useState("");
-    const [phone,setPhone] = useState("");
-    const [yourCity,setYourCity] = useState("");
-    const [yourSate,setYourState] = useState("");
-    const [email,setEmail] = useState("");
+    const [firstName, setFirstName] = useState("First Name");
+    const [lastName,setLastName] = useState("Last Name");
+    const [phone,setPhone] = useState("Phone Number");
+    const [yourCity,setYourCity] = useState("City");
+    const [yourSate,setYourState] = useState("State");
+    const [email,setEmail] = useState("E-Mail");
 
     useEffect(()=>{
         

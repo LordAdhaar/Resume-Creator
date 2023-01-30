@@ -5,7 +5,7 @@ export default function PersonalInfo(){
     return(
         <div className="personalInfo">
             <div className="fullName">
-                <p id="fName"></p>
+                <p id="fName"> Example Text</p>
                 <p id="lName"></p>
             </div>
             <div className="generalInfo">
