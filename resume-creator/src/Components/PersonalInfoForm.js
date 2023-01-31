@@ -61,7 +61,7 @@ export default function PersonalInfoForm(){
 
     return(
         <div className="personalInfoForm">
-            <h3>PERSONAL INFORMATION</h3>
+            <h3>Personal Information</h3>
             <input type="text" value={firstName} onChange={handleFirstName} placeholder="First Name"/>
             <input type="text" value={lastName} onChange={handleLastName} placeholder="Last Name"/>
             <input type="text" value={phone} onChange={handlePhone} placeholder="Phone Number"/>

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function SkillForm(props){
     
-    const [skill, setSkill] = useState("");
+    const [skill, setSkill] = useState("Skill");
 
     useEffect(()=>{
         const skillHTML = document.querySelector(`.skillInfo#${props.uniqueId} p`);

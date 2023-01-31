@@ -2,12 +2,12 @@ import {  useEffect, useState } from "react";
 
 export default function ExperienceForm(props){
 
-    const [position, setPosition] = useState("");
-    const [company,setCompany] = useState("");
-    const [jobCity,setJobCity] = useState("");
-    const [jobFrom,setJobFrom] = useState("");
-    const [jobTo,setJobTo] = useState("");
-    const [jobDescription,setJobDescription] = useState("");
+    const [position, setPosition] = useState("Position");
+    const [company,setCompany] = useState("Company");
+    const [jobCity,setJobCity] = useState("Location");
+    const [jobFrom,setJobFrom] = useState("From");
+    const [jobTo,setJobTo] = useState("To");
+    const [jobDescription,setJobDescription] = useState("Job Description ");
 
     useEffect(()=>{
         

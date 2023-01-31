@@ -2,7 +2,7 @@ import './App.css';
 import PersonalInfoForm from "./Components/PersonalInfoForm"
 import ExperienceForm from "./Components/ExperienceForm"
 import EducationForm from "./Components/EducationForm"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import uniqid from "uniqid";
 import PersonalInfo from "./Components/PersonalInfo"
 import ExperienceInfo from "./Components/ExperienceInfo";
@@ -14,7 +14,12 @@ import SkillInfo from "./Components/SkillInfo";
 function App() {
 
   const [uniqueId, setUniqueId] = useState(uniqid());
-  const [jobArr, setJobArr] = useState([]);
+
+  useEffect(()=>{
+    setUniqueId(uniqid());
+  },[])
+
+  const [jobArr, setJobArr] = useState([[<ExperienceForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<ExperienceInfo key={uniqid()} uniqueId={uniqueId}/>]]);
 
   function handleJobArr(){
     setJobArr([...jobArr,[<ExperienceForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<ExperienceInfo key={uniqid()} uniqueId={uniqueId}/>]])
@@ -35,7 +40,6 @@ function App() {
         {job[0]}
         <button onClick={()=>{deleteJob(job[1])}}>DELETE</button>
         <br />
-        <br />
       </div>
     )
   })
@@ -47,7 +51,7 @@ function App() {
     </div>
   )})
 
-  const [eduArr, setEduArr] = useState([])
+  const [eduArr, setEduArr] = useState([[<EducationForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<EducationInfo key={uniqueId} uniqueId={uniqueId}/>]])
 
   function handleEduArr(){
     setEduArr([...eduArr,[<EducationForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<EducationInfo key={uniqueId} uniqueId={uniqueId}/>]])
@@ -63,7 +67,6 @@ function App() {
         {edu[0]}
         <button onClick={()=>{deleteEdu(edu[1])}}>DELETE</button>
         <br />
-        <br />
       </div>
     )
   })
@@ -77,7 +80,7 @@ function App() {
     )
   })
 
-  const [skillArr, setSkillArr] = useState([]);
+  const [skillArr, setSkillArr] = useState([[<SkillForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<SkillInfo key={uniqueId} uniqueId={uniqueId} />]]);
 
   function handleSkillArr(){
     setSkillArr([...skillArr,[<SkillForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<SkillInfo key={uniqueId} uniqueId={uniqueId} />]]);
@@ -92,8 +95,6 @@ function App() {
       <div className="skillFormMain" key={skill[1]} id={skill[1]}>
           {skill[0]}
           <button onClick={()=>{deleteSkill(skill[1])}} >DELETE</button>
-          <br />
-          <br />
       </div>
     )
   });
@@ -121,33 +122,30 @@ function App() {
       
         <div className="jobHeader">
           <h3>Experience </h3>
-          <button onClick={()=>{handleUniqueId();handleJobArr();}}>ADD</button>
+          <button onClick={()=>{handleUniqueId();handleJobArr();}}>+</button>
         </div>
 
         <div className="jobContent">
           {jobChildren}
-          <br />
         </div>
         
 
         <div className="eduHeader">
           <h3>Education</h3>
-          <button onClick={()=>{handleUniqueId();handleEduArr()}}>ADD</button>
+          <button onClick={()=>{handleUniqueId();handleEduArr()}}>+</button>
         </div>
 
         <div className="eduContent">
           {eduChildren}
-          <br />
         </div>
 
         <div className="skillHeader">
           <h3>Skills</h3>
-          <button onClick={()=>{handleUniqueId();handleSkillArr()}} >ADD</button>
+          <button onClick={()=>{handleUniqueId();handleSkillArr()}} >+</button>
         </div>
 
         <div className="skillContent">
           {skillChildren}
-          <br />
         </div>
 
 

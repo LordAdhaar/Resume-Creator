@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 
 export default function EducationForm(props){
     
-    const [uni,setUni] = useState("");
-    const [degree,setDegree] = useState("");
-    const [GPA,setGPA] = useState("");
-    const [eduFrom,setEduFrom] = useState("");
-    const [eduTo,setEduTo] = useState("");
+    const [uni,setUni] = useState("University");
+    const [degree,setDegree] = useState("Degree");
+    const [GPA,setGPA] = useState("XX");
+    const [eduFrom,setEduFrom] = useState("From");
+    const [eduTo,setEduTo] = useState("To");
 
     useEffect(()=>{
 
