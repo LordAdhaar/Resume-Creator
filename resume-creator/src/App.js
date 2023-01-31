@@ -16,7 +16,16 @@ function App() {
   const [uniqueId, setUniqueId] = useState(uniqid());
 
   useEffect(()=>{
+
     setUniqueId(uniqid());
+
+    let printer = document.createElement("button");
+    printer.addEventListener("click",()=>{window.print()});
+    printer.innerHTML="Print Resume";
+
+    let form = document.querySelector("div.form");
+    form.appendChild(printer)
+
   },[])
 
   const [jobArr, setJobArr] = useState([[<ExperienceForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<ExperienceInfo key={uniqid()} uniqueId={uniqueId}/>]]);
@@ -107,6 +116,12 @@ function App() {
     )
   })
 
+/* function reset(){
+    setJobArr([[<ExperienceForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<ExperienceInfo key={uniqid()} uniqueId={uniqueId}/>]])
+    setEduArr([[<EducationForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<EducationInfo key={uniqueId} uniqueId={uniqueId}/>]])
+    setSkillArr([[<SkillForm key={uniqid()} uniqueId={uniqueId}/>,uniqid(),<SkillInfo key={uniqueId} uniqueId={uniqueId} />]])
+  }
+*/
 
   //RETURN THE FINAL APPLICATION
   return (
@@ -147,8 +162,6 @@ function App() {
         <div className="skillContent">
           {skillChildren}
         </div>
-
-
       </div>
 
       <div className="resume">
