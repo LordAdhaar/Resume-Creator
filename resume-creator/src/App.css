@@ -177,7 +177,7 @@ p#position, .tenure p{
 #jobDesc{
   grid-row: 3/4;
   grid-column: 1/3;
-  word-wrap: normal;
+  word-wrap: break-word;
 }
 
 .eduInfo{
