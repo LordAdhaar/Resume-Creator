@@ -23,8 +23,8 @@ function App() {
     printer.addEventListener("click",()=>{window.print()});
     printer.innerHTML="Print Resume";
 
-    let form = document.querySelector("div.form");
-    form.appendChild(printer)
+    let header = document.querySelector("div#header");
+    header.appendChild(printer)
 
   },[])
 
