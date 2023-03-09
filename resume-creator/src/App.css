@@ -60,10 +60,8 @@ body{
 }
 
 #header h1+button{
-  display: none;
-}
+  display: block;
 
-#header h1+button+button{
   margin: 0px 60px;
 
   background-color: #1a73e8;
@@ -72,6 +70,7 @@ body{
   border-radius: 5px;
   padding: 5px;
 }
+
 
 .form{
   margin: 0px 60px;
